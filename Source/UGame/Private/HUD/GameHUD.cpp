@@ -2,7 +2,7 @@
 
 #include "GameHUD.h"
 #include "UGame.h"
-#include "../Character/GameController.h"
+#include "../Character/UGameCharacter.h"
 #include "PickupUI.h"
 #include "Engine.h"
 
@@ -38,7 +38,7 @@ void AGameHUD::SetActionGridActor(AActor* InSelectedActor)
     SelectedActor = MakeWeakObjectPtr(InSelectedActor);
 }
 
-AGameController * AGameHUD::GetPlayerController() const
+AUGameCharacter * AGameHUD::GetPlayerController() const
 {
-    return Cast<AGameController>(PlayerOwner);
+    return Cast<AUGameCharacter>(PlayerOwner);
 }

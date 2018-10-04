@@ -29,7 +29,7 @@ public:
     void SetActionGridActor(AActor* InSelectedActor);
 
     /** gets player controller */
-    class AGameController* GetPlayerController() const;
+    class AUGameCharacter* GetPlayerController() const;
 
 protected:
     /** Actor for whom the menu should be displayed*/

@@ -8,7 +8,7 @@
 #include "GPickup.h"
 #include "Components/StaticMeshComponent.h"
 #include "Engine/World.h"
-#include "../Private/Character/GameController.h"
+#include "../Private/Character/UGameCharacter.h"
 #include "../../HUD/GameHUD.h"
 #include "TagStatics.h"
 #include "Engine.h"

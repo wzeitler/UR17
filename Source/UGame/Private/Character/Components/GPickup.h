@@ -11,7 +11,7 @@
 #include "CoreMinimal.h"
 #include "GPickup.generated.h"
 
-class AGameController; // Use Forward Declaration. Including the header in CPickup.cpp
+class AUGameCharacter; // Use Forward Declaration. Including the header in CPickup.cpp
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class UGAME_API UGPickup : public UActorComponent
@@ -27,7 +27,7 @@ public:
     AStaticMeshActor* ItemInRightHand;
 
     // The player character instance
-    AGameController * PlayerCharacter;
+    AUGameCharacter * PlayerCharacter;
 
     // The item which is currently focused by the player
     AStaticMeshActor* ItemToHandle;
