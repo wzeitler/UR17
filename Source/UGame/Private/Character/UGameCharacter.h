@@ -36,23 +36,15 @@ protected:
     virtual void Tick(float DeltaSeconds) override;
 
 public:
+    void AddControllerPitchInput(const float Val);
 
-    /** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-        float BaseTurnRate;
-
-    /** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
-    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-        float BaseLookUpRate;
+    void AddControllerYawInput(const float Val);
    
     UPROPERTY(EditAnywhere)
         class APickupAndRotateActor* CurrentItem;
 
     bool bCanMove;
     bool bHoldingItem;
-
-    float PitchMax;
-    float PitchMin;
 
     FVector HoldingComp;
     FRotator LastRotation;
@@ -71,24 +63,6 @@ protected:
     /** Action Function */
     void OnAction();
 
-    /** Handles moving forward/backward */
-    void MoveForward(float Val);
-
-    /** Handles stafing movement, left and right */
-    void MoveRight(float Val);
-
-    /**
-     * Called via input to turn at a given rate.
-     * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
-     */
-    void TurnAtRate(float Rate);
-
-    /**
-     * Called via input to turn look up/down at a given rate.
-     * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
-     */
-    void LookUpAtRate(float Rate);
-
     // toggle player movement
     void ToggleMovement();
 
@@ -101,5 +75,4 @@ protected:
 
     /** Returns FirstPersonCameraComponent subobject **/
     FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
-
 };

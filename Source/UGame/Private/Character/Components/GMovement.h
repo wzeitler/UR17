@@ -26,10 +26,6 @@ public:
     // Handles strafing Left/Right
     void MoveRight(const float Val);
 
-    void AddControllerPitchInput(const float Val);
-
-    void AddControllerYawInput(const float Val);
-
     // The maximum (or default) speed
     UPROPERTY(EditAnywhere, Category = "CI - Speed Setup")
         float MaxMovementSpeed;

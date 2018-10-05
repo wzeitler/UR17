@@ -71,23 +71,6 @@ void UGMovement::MoveRight(const float Val) {
     }
 }
 
-void UGMovement::AddControllerPitchInput(const float Val) {
-    if (bCanMove == false) return;
-
-    if (Character != nullptr)
-    {
-        Character->AddControllerPitchInput(Val);
-    }
-}
-
-void UGMovement::AddControllerYawInput(const float Val) {
-    if (bCanMove == false) return;
-    if (Character != nullptr)
-    {
-        Character->AddControllerYawInput(Val);
-    }
-}
-
 // Called every frame
 void UGMovement::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
@@ -116,9 +99,6 @@ void UGMovement::SetupKeyBindings(UInputComponent * PlayerInputComponent)
     // Set up gameplay key bindings
     PlayerInputComponent->BindAxis("MoveForward", this, &UGMovement::MoveForward);
     PlayerInputComponent->BindAxis("MoveRight", this, &UGMovement::MoveRight);
-    // Default Camera view bindings
-    PlayerInputComponent->BindAxis("CameraPitch", this, &UGMovement::AddControllerPitchInput);
-    PlayerInputComponent->BindAxis("CameraYaw", this, &UGMovement::AddControllerYawInput);
 }
 
 void UGMovement::SetMovable(bool bCanMove)
